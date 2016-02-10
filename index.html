@@ -1,0 +1,33 @@
+<html>
+  <head>
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js">
+    </script>
+  </head>
+  <body>
+    <center><button id="change"><h1>change color</h1></button></center>
+      <center><button id="what">Color name?</button></center>
+    <h3>Color name: <h3 id="name">?</h3></h3>
+    <script>
+      var colors = [
+        'LightYellow',
+        'Aquamarine',
+        'Gold',
+        'lavender',
+        'plum',
+        'indigo'
+      ];
+      var colorIdx = 0;
+      $("#change").click(function() {
+        console.log('colorIdx is: ' + colorIdx);
+        $('body').css('background-color', colors[colorIdx]);
+        colorIdx++;
+        if (colorIdx === 6){
+        colorIdx = 0;
+        };
+      });
+      $("#what").click(function(){
+    $("#name").text( colors[colorIdx]);
+});
+    </script>
+  </body>
+</html>
